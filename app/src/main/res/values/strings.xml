@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MvvmDemo</string>
+    <string name="homeContent">首页</string>
+    <string name="orderContent">订单</string>
+    <string name="myContent">我的</string>
+    <string name="moreContent">更多</string>
+</resources>

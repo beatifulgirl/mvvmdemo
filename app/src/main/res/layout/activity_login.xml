@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data class="LoginDataBinding">
+        <variable
+            name="viewModel"
+            type="com.example.zhy.mvvmdemo.viewmodel.LoginVM">
+        </variable>
+    </data>
+
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:background="@mipmap/night" >
+
+
+        <EditText
+            android:id="@+id/edt_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textColor="#99ffffff"
+            android:text="@={viewModel.name}"
+            android:layout_marginTop="150dp"
+            android:inputType="phone"
+            android:textColorHint="#99ffffff"
+            android:hint="请输入手机号"/>
+
+
+        <EditText
+            android:id="@+id/edt_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="15dp"
+            android:textColor="#99ffffff"
+            android:text="@={viewModel.pwd}"
+            android:textColorHint="#99ffffff"
+            android:hint="请输入密码"
+            android:inputType="textPassword" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:background="#f0f0f0"
+                android:gravity="center"
+                android:onClick="@{()->viewModel.onLoginClick()}"
+                android:layout_marginRight="50dp"
+                android:text="登录" />
+
+            <Button
+                android:id="@+id/btn_regist"
+                android:text="注册"
+                android:background="#f0f0f0"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:onClick="@{()->viewModel.onRegisthClick()}"
+                android:layout_width="0dp"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

@@ -64,6 +64,7 @@ public class CustomBottomTabWidget extends LinearLayout {
      */
     private void initViewPager() {
         mAdapter = new TabPagerAdapter(mFragmentManager, mFragmentList);
+        dataBinding.vpTabWidget.setOffscreenPageLimit(4);
         dataBinding.vpTabWidget.setAdapter(mAdapter);
         dataBinding.vpTabWidget.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

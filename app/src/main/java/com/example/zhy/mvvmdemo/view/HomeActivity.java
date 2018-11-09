@@ -41,4 +41,6 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> {
         //初始化CustomBottomTabWidget
         getDataBind().tabWidget.init(getSupportFragmentManager(),fragmentList);
     }
+
+
 }

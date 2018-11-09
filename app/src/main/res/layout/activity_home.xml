@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
-
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:titlebar="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
+        android:fitsSystemWindows="true"
         android:layout_height="match_parent">
+
+        <com.wuhenzhizao.titlebar.widget.CommonTitleBar
+            android:id="@+id/titlebar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            titlebar:fillStatusBar="true"
+            titlebar:centerType="textView"
+            titlebar:centerText="导航"
+            titlebar:titleBarColor="#fff" />
+
 
         <com.example.zhy.mvvmdemo.view.view.CustomBottomTabWidget
             android:id="@+id/tabWidget"

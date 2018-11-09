@@ -28,43 +28,25 @@ public class NewsModelImpl implements INewsModel {
                 .subscribe(new DisposableObserver<NewsBean>() {
                     @Override
                     public void onNext(NewsBean newsBean) {
-                        Log.i(TAG, "onNext: "+ newsBean.getLimit());
-                        List<NewsBean.OthersBean> othersBeanList = new ArrayList<>();
-                        NewsBean.OthersBean bean =  new NewsBean.OthersBean(15007,"http://pic3.zhimg.com/0e71e90fd6be47630399d63c58beebfc.jpg","了解自己和别人，了解彼此的欲望和局限。",13,"日常心理学1");
-                        NewsBean.OthersBean bean1 =  new NewsBean.OthersBean(15007,"http://pic2.zhimg.com/98d7b4f8169c596efb6ee8487a30c8ee.jpg","了解自己和别人，了解彼此的欲望和局限。",13,"日常心理学2");
-                        NewsBean.OthersBean bean2 =  new NewsBean.OthersBean(15007,"http://pic3.zhimg.com/bcf7d594f126e5ceb22691be32b2650a.jpg","了解自己和别人，了解彼此的欲望和局限。",13,"日常心理学3");
-                        NewsBean.OthersBean bean3 =  new NewsBean.OthersBean(15007,"http://pic3.zhimg.com/98d7b4f8169c596efb6ee8487a30c8ee.jpg","了解自己和别人，了解彼此的欲望和局限。",13,"日常心理学4");
-                        NewsBean.OthersBean bean4 =  new NewsBean.OthersBean(15007,"http://pic3.zhimg.com/0e71e90fd6be47630399d63c58beebfc.jpg","了解自己和别人，了解彼此的欲望和局限。",13,"日常心理学4");
-                        NewsBean.OthersBean bean5 =  new NewsBean.OthersBean(15007,"http://pic3.zhimg.com/bcf7d594f126e5ceb22691be32b2650a.jpg","了解自己和别人，了解彼此的欲望和局限。",13,"日常心理学4");
-                        NewsBean.OthersBean bean6 =  new NewsBean.OthersBean(15007,"http://pic3.zhimg.com/0e71e90fd6be47630399d63c58beebfc.jpg","了解自己和别人，了解彼此的欲望和局限。",13,"日常心理学4");
-                        NewsBean.OthersBean bean7 =  new NewsBean.OthersBean(15007,"http://pic3.zhimg.com/0e71e90fd6be47630399d63c58beebfc.jpg","了解自己和别人，了解彼此的欲望和局限。",13,"日常心理学4");
-                        othersBeanList.add(bean) ;
-                        othersBeanList.add(bean1) ;
-                        othersBeanList.add(bean2) ;
-                        othersBeanList.add(bean3) ;
-                        othersBeanList.add(bean4) ;
-                        othersBeanList.add(bean5) ;
-                        othersBeanList.add(bean6) ;
-                        othersBeanList.add(bean7) ;
-
                         if(page==1){
                             simpleNewsBeanList.clear();
                         }
-                        if (othersBeanList != null && othersBeanList.size() > 0) {
-                            for (NewsBean.OthersBean othersBean : othersBeanList) {
-                                String thumbnail = othersBean.getThumbnail();
-                                String name = othersBean.getName();
-                                String description = othersBean.getDescription();
+                        //构造Adapter所需的数据源
+                        SimpleNewsBean simpleNewsBean = new SimpleNewsBean();
+                        simpleNewsBean.thumbnail.set("http://pic3.zhimg.com/0e71e90fd6be47630399d63c58beebfc.jpg");
+                        simpleNewsBean.thumbnails.add("http://pic3.zhimg.com/0e71e90fd6be47630399d63c58beebfc.jpg");
+                        simpleNewsBean.thumbnails.add("http://pic3.zhimg.com/0e71e90fd6be47630399d63c58beebfc.jpg");
+                        simpleNewsBean.thumbnails.add("http://pic3.zhimg.com/0e71e90fd6be47630399d63c58beebfc.jpg");
+                        simpleNewsBean.id.set(1);
 
-                                //构造Adapter所需的数据源
-                                SimpleNewsBean simpleNewsBean = new SimpleNewsBean();
-                                simpleNewsBean.thumbnail.set(thumbnail);
-                                simpleNewsBean.name.set(name);
-                                simpleNewsBean.description.set(description);
-                                simpleNewsBeanList.add(simpleNewsBean);
-                            }
-                        }
 
+                        SimpleNewsBean simpleNewsBean2 = new SimpleNewsBean();
+                        simpleNewsBean2.thumbnail.set("http://pic3.zhimg.com/0e71e90fd6be47630399d63c58beebfc.jpg");
+                        simpleNewsBean2.name.set("哈哈哈");
+                        simpleNewsBean2.description.set("描述描述描述描述描述描述描述描述描述描述");
+                        simpleNewsBean2.id.set(2);
+                        simpleNewsBeanList.add(simpleNewsBean);
+                        simpleNewsBeanList.add(simpleNewsBean2);
                     }
 
                     @Override

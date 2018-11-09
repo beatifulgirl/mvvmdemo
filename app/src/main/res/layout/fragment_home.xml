@@ -6,8 +6,6 @@
         android:orientation="vertical"
         android:layout_height="match_parent">
 
-        <include layout="@layout/layout_title"/>
-
         <com.jcodecraeer.xrecyclerview.XRecyclerView
             android:id="@+id/fragment_news_rvs"
             android:layout_width="match_parent"

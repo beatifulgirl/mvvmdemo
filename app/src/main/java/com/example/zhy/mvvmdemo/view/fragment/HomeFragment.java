@@ -8,10 +8,14 @@ import com.example.zhy.mvvmdemo.R;
 import com.example.zhy.mvvmdemo.adapter.NewsAdapter;
 import com.example.zhy.mvvmdemo.base.BaseFragment;
 import com.example.zhy.mvvmdemo.databinding.FragmentHomeBinding;
-import com.example.zhy.mvvmdemo.utils.MyToast;
+import com.example.zhy.mvvmdemo.utils.MessageEvent;
 import com.example.zhy.mvvmdemo.viewmodel.NewsVM;
 import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 public class HomeFragment extends BaseFragment<FragmentHomeBinding> implements XRecyclerView.LoadingListener {
 
@@ -39,7 +43,14 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding> implements X
         mNewsVM = new NewsVM();
         mNewsVM.setData(adapter, getDataBind().fragmentNewsRvs);
 
-        MyToast.toast("提交一次");
+        EventBus.getDefault().register(this);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void Event(MessageEvent messageEvent) {
+        if(messageEvent.getMessage().equals("1")){
+
+        }
     }
 
     @Override
@@ -53,4 +64,8 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding> implements X
     }
 
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
 }

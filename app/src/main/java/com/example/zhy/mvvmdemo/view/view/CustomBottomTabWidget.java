@@ -13,6 +13,9 @@ import com.example.zhy.mvvmdemo.R;
 import com.example.zhy.mvvmdemo.adapter.TabPagerAdapter;
 import com.example.zhy.mvvmdemo.base.BaseFragment;
 import com.example.zhy.mvvmdemo.databinding.WidgetCustomBottomTabBinding;
+import com.example.zhy.mvvmdemo.utils.MessageEvent;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
@@ -145,6 +148,9 @@ public class CustomBottomTabWidget extends LinearLayout {
     public class Custom{
         public void onClickView(int i){
             dataBinding.vpTabWidget.setCurrentItem(i);
+            if(i==0){
+                EventBus.getDefault().post(new MessageEvent("1"));
+            }
         }
     }
 }

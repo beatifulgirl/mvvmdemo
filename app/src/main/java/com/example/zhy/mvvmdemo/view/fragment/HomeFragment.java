@@ -8,6 +8,7 @@ import com.example.zhy.mvvmdemo.R;
 import com.example.zhy.mvvmdemo.adapter.NewsAdapter;
 import com.example.zhy.mvvmdemo.base.BaseFragment;
 import com.example.zhy.mvvmdemo.databinding.FragmentHomeBinding;
+import com.example.zhy.mvvmdemo.utils.MyToast;
 import com.example.zhy.mvvmdemo.viewmodel.NewsVM;
 import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -37,6 +38,8 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding> implements X
 
         mNewsVM = new NewsVM();
         mNewsVM.setData(adapter, getDataBind().fragmentNewsRvs);
+
+        MyToast.toast("提交一次");
     }
 
     @Override

@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="@string/myContent"
-        android:layout_height="wrap_content" />
+    <data>
 
-</LinearLayout>
+        <variable
+            name="viewModel"
+            type="com.example.zhy.mvvmdemo.viewmodel.MyVM"></variable>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_tochart"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            android:onClick="@{()->viewModel.toChart()}"
+            android:background="@mipmap/btn_big_blue_disable"
+            android:text="聊天" />
+
+   </RelativeLayout>
+
 </layout>

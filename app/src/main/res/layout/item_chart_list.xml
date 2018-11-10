@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/right_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/iv_my"
+                android:layout_width="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/night"
+                android:scaleType="fitXY"
+                android:layout_height="40dp" />
+
+            <TextView
+                android:id="@+id/right_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/iv_my"
+                android:background="@mipmap/bg_msgbox_send_normal"
+                android:gravity="center"
+                android:text="dgdfgfdgfdgdfgfdgfdg" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/left_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/iv_py"
+                android:layout_width="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/messageview"
+                android:scaleType="fitXY"
+                android:layout_height="40dp" />
+
+            <TextView
+                android:id="@+id/left_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/iv_py"
+                android:background="@mipmap/bg_msgbox_receive_press"
+                android:gravity="center"
+                android:text="dgdfgfdgfdgdfgfdgfdg" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

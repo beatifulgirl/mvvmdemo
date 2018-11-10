@@ -23,7 +23,12 @@
         <activity
             android:name=".view.HomeActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.ChartActivity"
+            android:screenOrientation="portrait" />
 
+        <service android:name="com.example.zhy.mvvmdemo.service.TCPServiceService"
+            android:process=":remote"></service>
     </application>
 
 </manifest>
